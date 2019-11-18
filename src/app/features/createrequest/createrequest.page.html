@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Solicitar Oferta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="image-container">
+    <img src="../../assets/ofertagrado.jpg" alt="">
+  </div>
+  <ion-item>
+    <ion-label position="floating">Periodo</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <br />
+  <ion-item>
+    <ion-label position="floating">Año</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <br />
+  <br />
+  <ion-row justify-content-center align-items-center >
+      <ion-button color="success" (click)="saveandnext()">Save and next</ion-button>
+      <ion-button color="medium" (click)="atras()">Atras</ion-button>
+  </ion-row>
+
+</ion-content>
