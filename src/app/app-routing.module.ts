@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'editrequestdetail',
     loadChildren: () => import('./features/editrequestdetail/editrequestdetail.module').then( m => m.EditrequestdetailPageModule)
+  },
+  {
+    path: 'viewrequestdetail',
+    loadChildren: () => import('./features/viewrequestdetail/viewrequestdetail.module').then( m => m.ViewrequestdetailPageModule)
   }
 ];
 @NgModule({

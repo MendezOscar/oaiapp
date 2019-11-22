@@ -5,9 +5,29 @@
 </ion-header>
 
 <ion-content>
-  <h1>Hola</h1>
-  <ion-row justify-content-center align-items-center >
-      <ion-button color="success" (click)="saveandnext()">Save and next</ion-button>
-      <ion-button color="medium" (click)="atras()">Atras</ion-button>
+  <br />
+  <ion-item>
+    <ion-label position="floating">Cuenta Alumno</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <br />
+  <ion-item>
+    <ion-label position="floating">Curso</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <br />
+  <ion-item>
+    <ion-label position="floating">Dia</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <br />
+  <ion-item>
+    <ion-label position="floating">Hora</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <br />
+  <ion-row justify-content-center align-items-center>
+    <ion-button (click)="saveandnext()">Guardar y continuar</ion-button>
+    <ion-button color="medium" (click)="atras()">Atras</ion-button>
   </ion-row>
 </ion-content>

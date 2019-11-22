@@ -14,4 +14,8 @@ export class Tab2Page {
     this.router.navigate(['createrequest']);
   }
 
+  verDetalle() {
+    this.router.navigate(['viewrequestdetail']);
+  }
+
 }
