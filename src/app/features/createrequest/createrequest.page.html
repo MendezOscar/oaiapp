@@ -1,19 +1,19 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-button (click)="atras()">
-          <ion-icon slot="start" name="ios-arrow-back"></ion-icon>
-          Perfil
-        </ion-button>
-      </ion-buttons>
-      <ion-title>&nbsp;</ion-title>
-      <ion-buttons slot="end">
-        <ion-button>
-          <ion-icon slot="icon-only" src="../../assets/checkmark-filled.svg"></ion-icon>
-         </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="atras()">
+        <ion-icon slot="start" name="ios-arrow-back"></ion-icon>
+        Perfil
+      </ion-button>
+    </ion-buttons>
+    <ion-title>&nbsp;</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" src="../../assets/checkmark-filled.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
   <div class="image-container">
@@ -21,17 +21,22 @@
   </div>
   <ion-item>
     <ion-label position="floating">Periodo</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="periodo" [ngModelOptions]="{standalone: true}"></ion-input>
   </ion-item>
   <br />
   <ion-item>
     <ion-label position="floating">Año</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="anio" [ngModelOptions]="{standalone: true}"></ion-input>
+  </ion-item>
+  <br />
+  <ion-item>
+    <ion-label position="floating">Cuenta</ion-label>
+    <ion-input [(ngModel)]="cuentaAlumno" [ngModelOptions]="{standalone: true}"></ion-input>
   </ion-item>
   <br />
   <br />
-  <ion-row justify-content-center align-items-center >
-      <ion-button (click)="saveandnext()">Guardar y continuar</ion-button>
+  <ion-row justify-content-center align-items-center>
+    <ion-button (click)="saveandnext()">Guardar y continuar</ion-button>
   </ion-row>
 
 </ion-content>

@@ -18,7 +18,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'solicitud',
+        path: 'solicitud/:cuenta',
         children: [
           {
             path: '',

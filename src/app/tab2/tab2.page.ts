@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ConsultaMatriculaDetalle } from '../models/ConsultaMatriculaDetalle';
+import { ConsultaMatriculaService } from '../services/ConsultaMatricula/consulta-matricula.service';
+import { ConsultaMatricula } from '../models/ConsultaMatricula';
 
 @Component({
   selector: 'app-tab2',
@@ -7,8 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  consultaMatricula: ConsultaMatricula[];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private route: ActivatedRoute,
+              private consultaMatriculaService: ConsultaMatriculaService) { }
+
+  // tslint:disable-next-line: use-lifecycle-interface
+  ngOnInit() {
+    // tslint:disable-next-line: radix
+    const cuenta = this.route.snapshot.paramMap.get('cuenta');
+    this.getConsultaMatricula(cuenta);
+  }
 
   crear() {
     this.router.navigate(['createrequest']);
@@ -16,6 +28,12 @@ export class Tab2Page {
 
   verDetalle() {
     this.router.navigate(['viewrequestdetail']);
+  }
+
+  getConsultaMatricula(cuenta: string) {
+    this.consultaMatriculaService.getConsultaMatriculaByAlumno(cuenta).subscribe(data => {
+      this.consultaMatricula = data;
+    });
   }
 
 }

@@ -20,21 +20,9 @@
     <ion-item>
       <ion-label></ion-label>
     </ion-item>
-    <ion-item>
-      <ion-label>2019-1</ion-label>
+    <ion-item *ngFor="let item of consultaMatricula">
+      <ion-label>{{item.periodo + '-' + item.anio}}</ion-label>
       <ion-icon name="eye" slot="end" (click)="verDetalle()"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-label>2019-2</ion-label>
-      <ion-icon name="eye" slot="end"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-label>2019-3</ion-label>
-      <ion-icon name="eye" slot="end"></ion-icon>
-    </ion-item>
-    <ion-item>
-      <ion-label>2019-4</ion-label>
-      <ion-icon name="eye" slot="end"></ion-icon>
     </ion-item>
   </ion-list>
 

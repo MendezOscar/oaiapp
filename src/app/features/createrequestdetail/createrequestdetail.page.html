@@ -7,23 +7,38 @@
 <ion-content>
   <br />
   <ion-item>
-    <ion-label position="floating">Cuenta Alumno</ion-label>
-    <ion-input></ion-input>
+    <ion-label>Matricula</ion-label>
+    <ion-select placeholder="Select One" name="nombreCurso" class="form-control" id="cursoControlSelect"
+    [(ngModel)]="maticulaId" ngDefaultControl [ngModelOptions]="{standalone: true}">
+      <ion-select-option *ngFor="let item of solicitudes" 
+        [value]="item.consultamatriculaId">
+        {{item.periodo}} - {{item.anio}}</ion-select-option>
+    </ion-select>
   </ion-item>
   <br />
   <ion-item>
-    <ion-label position="floating">Curso</ion-label>
-    <ion-input></ion-input>
+    <ion-label>Curso</ion-label>
+    <ion-select placeholder="Select One" name="nombreCurso" class="form-control" id="cursoControlSelect" 
+    [(ngModel)]="curso" [ngModelOptions]="{standalone: true}">
+      <ion-select-option *ngFor="let item of cursos" 
+        [value]="item.cursoId">
+        {{item.nombre}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br />
+  <ion-item>
+    <ion-label position="floating">Alumno</ion-label>
+    <ion-input [(ngModel)]="cuentaAlumno" [ngModelOptions]="{standalone: true}"></ion-input>
   </ion-item>
   <br />
   <ion-item>
     <ion-label position="floating">Dia</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="dia" [ngModelOptions]="{standalone: true}"></ion-input>
   </ion-item>
   <br />
   <ion-item>
     <ion-label position="floating">Hora</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="hora" [ngModelOptions]="{standalone: true}"></ion-input>
   </ion-item>
   <br />
   <ion-row justify-content-center align-items-center>

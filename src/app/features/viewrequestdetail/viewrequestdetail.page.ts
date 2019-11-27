@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-viewrequestdetail',
@@ -7,18 +8,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./viewrequestdetail.page.scss'],
 })
 export class ViewrequestdetailPage implements OnInit {
-
-  constructor(private router: Router) { }
+  cuenta: string;
+  constructor(private router: Router, private storage: Storage) { }
 
   ngOnInit() {
+    this.cuenta = localStorage.getItem('user');
   }
 
   atras() {
-    this.router.navigate(['/gestion/features/solicitud']);
+    this.storage.get('user').then((val) => {
+      this.router.navigate(['/gestion/features/solicitud', val]);
+    });
   }
 
   saveandnext() {
-    this.router.navigate(['/gestion/features/solicitud']);
+    this.storage.get('user').then((val) => {
+      this.router.navigate(['/gestion/features/solicitud', val]);
+    });
   }
 
 }
