@@ -33,6 +33,7 @@ export class Tab2Page {
   getConsultaMatricula(cuenta: string) {
     this.consultaMatriculaService.getConsultaMatriculaByAlumno(cuenta).subscribe(data => {
       this.consultaMatricula = data;
+      console.log(this.consultaMatricula);
     });
   }
 

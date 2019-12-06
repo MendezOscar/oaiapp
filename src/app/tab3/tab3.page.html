@@ -6,4 +6,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+
+<ion-content>
+
+
+  <ion-card *ngFor="let item of oferta">
+    <ion-card-header>
+      <ion-card-subtitle>{{item.periodo + '-' + item.anio}}</ion-card-subtitle>
+      <ion-card-title>{{item.nombreCurso}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{item.periodo + '-' + item.anio}} - {{item.nombreAula}} -
+      {{item.horaInicio | date: ' HH:mm:ss'}} - {{item.horaFinal | date: ' HH:mm:ss'}} -
+      {{item.nombreDocente}}
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
